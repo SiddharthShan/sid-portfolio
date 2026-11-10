@@ -143,12 +143,11 @@ const primaryNavigation = [
   { label: 'Experience', href: '#experience' },
   { label: 'Work', href: '#projects' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Bug Hunt', href: '#bug-hunt' },
+  { label: 'QA artifacts', href: '#qa-artifacts' },
 ]
 
 const additionalNavigation = [
   { label: 'Certifications', href: '#certifications' },
-  { label: 'QA samples', href: '#qa-artifacts' },
   { label: 'Skills', href: '#skills' },
 ]
 
@@ -439,20 +438,22 @@ function App() {
             </button>
           </div>
 
-          <a className="hero-project-tile" href="#qa-artifacts">
-            <span className="project-tile-art" aria-hidden="true">
-              <span className="tile-check">✓</span>
-              <span className="tile-line tile-line-one" />
-              <span className="tile-check">✓</span>
-              <span className="tile-line tile-line-two" />
-              <span className="tile-check">✓</span>
-              <span className="tile-line tile-line-three" />
+          <button
+            className="hero-project-tile hero-bug-hunt-tile"
+            type="button"
+            onClick={() => setIsGrocerCentralOpen(true)}
+          >
+            <span className="project-tile-art bug-tile-art" aria-hidden="true">
+              <span className="bug-node bug-node-one">!</span>
+              <span className="bug-node bug-node-two">!</span>
+              <span className="bug-node bug-node-three">!</span>
+              <span className="bug-tile-label">Find what slipped through</span>
             </span>
             <span className="project-tile-caption">
-              <strong>QA CASE STUDY</strong>
-              <span>Explore the process</span>
+              <strong>QA BUG HUNT</strong>
+              <span>Play the challenge</span>
             </span>
-          </a>
+          </button>
 
           <button
             className="hero-contact-tile"

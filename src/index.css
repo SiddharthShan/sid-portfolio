@@ -359,9 +359,13 @@ a:focus-visible {
   display: block;
   width: clamp(150px, 14vw, 205px);
   padding: 8px;
+  border: 0;
   background: #fffdfa;
   color: var(--ink);
   box-shadow: 0 14px 34px rgb(74 24 8 / 16%);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   opacity: var(--element-opacity);
   transform: translate3d(0, var(--element-y), 0);
   transition: translate 160ms ease;
@@ -384,33 +388,66 @@ a:focus-visible {
     linear-gradient(145deg, #f7a16e 0%, #f9c5a5 56%, #fce4d6 100%);
 }
 
-.tile-check {
-  display: grid;
-  width: 25px;
-  height: 25px;
-  place-items: center;
-  border: 1px solid rgb(115 48 23 / 36%);
-  color: #9f3a1a;
-  font-size: 0.85rem;
-  font-weight: 800;
-}
-
-.tile-line {
+.bug-tile-art {
+  position: relative;
   display: block;
-  height: 5px;
-  background: rgb(106 43 20 / 38%);
+  overflow: hidden;
 }
 
-.tile-line-one {
-  width: 88%;
+.bug-tile-art::before {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgb(120 48 20 / 9%) 0 1px,
+    transparent 1px 15px
+  );
+  content: "";
 }
 
-.tile-line-two {
-  width: 70%;
+.bug-node {
+  position: absolute;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: 1px solid rgb(115 48 23 / 38%);
+  border-radius: 50%;
+  background: #fffdfa;
+  color: #9f3a1a;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
-.tile-line-three {
-  width: 80%;
+.bug-node-one {
+  top: 18%;
+  left: 13%;
+}
+
+.bug-node-two {
+  top: 42%;
+  left: 42%;
+}
+
+.bug-node-three {
+  top: 16%;
+  left: 71%;
+}
+
+.bug-tile-label {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  left: 16px;
+  color: #7a2f14;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .project-tile-caption {
@@ -1548,11 +1585,6 @@ a:focus-visible {
     padding: 10px;
   }
 
-  .tile-check {
-    width: 21px;
-    height: 21px;
-  }
-
   .project-tile-caption {
     font-size: 0.48rem;
   }
@@ -1771,6 +1803,29 @@ a:focus-visible {
 
   .hero-project-tile {
     display: none;
+  }
+
+  .hero-bug-hunt-tile {
+    display: block;
+    top: 38%;
+    right: 5%;
+    bottom: auto;
+    width: 128px;
+    padding: 6px;
+  }
+
+  .bug-node {
+    width: 21px;
+    height: 21px;
+    font-size: 0.68rem;
+  }
+
+  .bug-tile-label {
+    right: 8px;
+    bottom: 7px;
+    left: 8px;
+    font-size: 0.4rem;
+    letter-spacing: 0.05em;
   }
 
   .hero-contact-tile {
